@@ -8,8 +8,9 @@
 	/* set the r version here */
 	"image": "ghcr.io/rocker-org/devcontainer/r-ver:4.2",
 	
-	/* set this to a recent cran freeze when you start working on a project
-	 find one at https://packagemanager.posit.co/client/#/repos/2/overview */
+	/* set this to a recent ppm checkpoint when you start working on a project...
+	   find one at https://packagemanager.posit.co/client/#/repos/2/overview */
+
 	// "containerEnv": {
   //   "PKG_CRAN_MIRROR": "https://packagemanager.posit.co/cran/2023-01-31"
 	// },
@@ -29,11 +30,13 @@
 	},
 
 	"customizations": {
+		/* add vscode extensions to be bundled in here */
 		"vscode": {
 			"extensions": ["mechatroner.rainbow-csv"]
 		},
+		/* these files will open when you launch as a codespace */
 		"codespaces": {
-			"openFiles": ["README.md"]
+			"openFiles": ["index.qmd", "README.md"]
 		}
 	}
 }
