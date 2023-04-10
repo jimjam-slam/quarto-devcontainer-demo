@@ -1,8 +1,10 @@
 // For format details, see https://aka.ms/devcontainer.json.
 // For config options, see the README at:
 // https://github.com/rocker-org/devcontainer-templates/tree/main/src/r-ver
+
 {
 	"name": "R (rocker/r-ver base)",
+	
 	/* set the r version here */
 	"image": "ghcr.io/rocker-org/devcontainer/r-ver:4.2",
 	
@@ -15,11 +17,6 @@
 		"ghcr.io/rocker-org/devcontainer-features/quarto-cli:1": {
 			"version": "prerelease"
 		},
-		/* node/npm used for sverto; can be removed if you're not using it */
-		// "ghcr.io/devcontainers/features/node:1": {
-		// 	"nodeGypDependencies": true,
-		// 	"version": "lts"
-		// },
 		/* add apt packages (eg. system requirements for r packages) here.
 		   note that they are not frozen */
 		"ghcr.io/rocker-org/devcontainer-features/apt-packages:1": {
@@ -27,22 +24,16 @@
 		},
 		/* add additional r packages here */
 		"ghcr.io/rocker-org/devcontainer-features/r-packages:1": {
-			"packages": "github::rstudio/renv,tidyverse,here,httpgd,themes360info"
+			"packages": "github::rstudio/renv,tidyverse,here,httpgd"
 		},
 	},
 
-	/* Use 'postCreateCommand' to run commands after the container is created.
-	  (for example, install some R packages or system dependencies) */
-	// "postCreateCommand": "",
-
-	/* Use 'forwardPorts' to make a list of ports inside the container available
-	   locally. */
-	// "forwardPorts": [],
-
-	// Configure tool-specific properties.
-	// "customizations": {},
-
-	// Uncomment to connect as root instead.
-	// More info: https://aka.ms/dev-containers-non-root.
-	// "remoteUser": "root"
+	"customizations": {
+		"vscode": {
+			"extensions": ["mechatroner.rainbow-csv"]
+		},
+		"codespaces": {
+			"openFiles": ["README.md"]
+		}
+	}
 }
